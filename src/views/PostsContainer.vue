@@ -6,12 +6,15 @@
 
 <script lang="ts">
     import Vue from 'vue';
-    import { Component } from 'vue-property-decorator';
+    import {Component} from 'vue-property-decorator';
 
     @Component({
         name: 'PostsContainer',
     })
     export default class PostsContainer extends Vue {
+        created() {
+            this.$store.dispatch('getPosts');
+        }
     }
 </script>
 
