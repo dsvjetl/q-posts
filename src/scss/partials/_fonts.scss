@@ -1,0 +1,27 @@
+// FONT FACES
+@font-face {
+    font-family: 'Rubik';
+    src: url('/assets/fonts/Rubik-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'Rubik';
+    src: url('/assets/fonts/Rubik-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'Rubik';
+    src: url('/assets/fonts/Rubik-Light.ttf');
+}
+
+// FONT VARIABLES
+$fw-light: 300;
+$fw-normal: 500;
+$fw-bold: 600;
+
+// SET INITIAL FONT
+* {
+    font-family: 'Rubik', sans-serif;
+    color: #000;
+    font-weight: $fw-normal;
+}
