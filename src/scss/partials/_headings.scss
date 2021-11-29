@@ -1,11 +1,59 @@
 .h--22 {
     font-size: 22px;
+
+    @include media('<=desktop', '>tablet') {
+        font-size: 20px;
+    }
+
+    @include media('<=tablet', '>desktop') {
+        font-size: 18px;
+    }
+
+    @include media('<=tablet', '>phone') {
+        font-size: 16px;
+    }
+
+    @include media('<phone') {
+        font-size: 14px;
+    }
 }
 
 .h--35 {
     font-size: 35px;
+
+    @include media('<=desktop', '>tablet') {
+        font-size: 30px;
+    }
+
+    @include media('<=tablet', '>desktop') {
+        font-size: 27px;
+    }
+
+    @include media('<=tablet', '>phone') {
+        font-size: 24px;
+    }
+
+    @include media('<phone') {
+        font-size: 20px;
+    }
 }
 
 .h--15 {
     font-size: 15px;
+
+    @include media('<=desktop', '>tablet') {
+        font-size: 13px;
+    }
+
+    @include media('<=tablet', '>desktop') {
+        font-size: 11px;
+    }
+
+    @include media('<=tablet', '>phone') {
+        font-size: 10px;
+    }
+
+    @include media('<phone') {
+        font-size: 9px;
+    }
 }

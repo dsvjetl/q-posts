@@ -50,6 +50,12 @@
         color: $green;
         width: fit-content;
 
+        @include media('<=tablet') {
+            width: 100%;
+            margin: 0;
+            border-radius: 0;
+        }
+
         &__title {
             color: #fff;
             padding-bottom: 30px;
