@@ -15,11 +15,11 @@ const routes: RouteConfig[] = [
         name: 'post',
         component: () => import('../views/PostContainer.vue'),
     },
-    // {
-    //     path: '/',
-    //     name: 'name',
-    //     component: () => import('../views/[container-name].vue'),
-    // },
+    {
+        path: '*',
+        name: 'not-found',
+        redirect: '/',
+    },
 ];
 
 const router = new VueRouter({

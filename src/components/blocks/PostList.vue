@@ -1,9 +1,14 @@
 <template>
-    <div class="co-post-list" v-if="posts">
-        <h1 class="title h--35 --bold">Posts</h1>
+    <div class="co-post-list" v-if="filteredPosts">
+        <h1 class="co-post-list__title h--35 --bold">Posts</h1>
+        <AppInput
+            class="input"
+            placeholder="Filter Posts"
+            @onKeyup="inputKeyup($event)"
+        />
         <div
             class="post"
-            v-for="post of posts"
+            v-for="post of filteredPosts"
             :key="post.id"
         >
             <router-link
@@ -31,13 +36,32 @@
     import {Component, Prop} from 'vue-property-decorator';
     import {PostWithCommentsDTO} from '@/interfaces/dto/PostWithCommentsDTO';
     import {getNameFromEmailFilter} from '@/filters/getNameFromEmailFilter';
+    import AppInput from '@/components/elements/AppInput.vue';
 
     @Component({
         name: 'PostList',
+        components: {AppInput},
         filters: {getNameFromEmailFilter},
     })
     export default class PostList extends Vue {
         @Prop() posts!: PostWithCommentsDTO[];
+
+        filterTextParam = '';
+
+        get filteredPosts(): PostWithCommentsDTO[] {
+            if (!this.filterTextParam) {
+                return this.posts;
+            }
+
+            return this.posts.filter((post) => {
+                return post.title.toLowerCase()
+                    .includes(this.filterTextParam.toLowerCase());
+            });
+        }
+
+        inputKeyup(value: string) {
+            this.filterTextParam = value;
+        }
     }
 </script>
 
@@ -49,8 +73,14 @@
         margin: 30px auto;
         width: percentage(12 / 24);
 
-        .title {
+        &__title {
             color: #fff;
+            padding-bottom: 10px;
+        }
+
+        .input {
+            margin-bottom: 10px;
+            width: 50%;
         }
 
         .post {
