@@ -7,3 +7,8 @@ $trans-3s: all .3s ease-in-out;
 .--thin {
     font-weight: $fw-thin;
 }
+
+::selection {
+    background: $green;
+    color: #000;
+}

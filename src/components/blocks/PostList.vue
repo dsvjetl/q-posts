@@ -13,7 +13,7 @@
                     v-for="comment of post.comments"
                     :key="comment.id"
                 >
-                    <span class="comment__email">{{comment.email}}: </span>
+                    <span class="comment__email">{{comment.email | getNameFromEmail}}: </span>
                     <span class="comment__body">{{comment.body}}</span>
                 </div>
             </div>
@@ -25,9 +25,11 @@
     import Vue from 'vue';
     import {Component, Prop} from 'vue-property-decorator';
     import {PostWithCommentsDTO} from '@/interfaces/dto/PostWithCommentsDTO';
+    import {getNameFromEmailFilter} from '@/filters/getNameFromEmailFilter';
 
     @Component({
         name: 'PostList',
+        filters: {getNameFromEmailFilter},
     })
     export default class PostList extends Vue {
         @Prop() posts!: PostWithCommentsDTO[];
@@ -57,6 +59,7 @@
                 color: $green;
                 transition: $trans-3s;
                 cursor: pointer;
+                text-decoration: underline;
 
                 &:hover {
                     background-color: $green;
