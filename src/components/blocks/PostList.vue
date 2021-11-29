@@ -73,6 +73,12 @@
         margin: 30px auto;
         width: percentage(12 / 24);
 
+        @include media('<=tablet') {
+            width: percentage(24 / 24);
+            border-radius: 0;
+            margin: 0;
+        }
+
         &__title {
             color: #fff;
             padding-bottom: 10px;
@@ -81,6 +87,10 @@
         .input {
             margin-bottom: 10px;
             width: 50%;
+
+            @include media('<=tablet') {
+                width: 100%;
+            }
         }
 
         .post {
