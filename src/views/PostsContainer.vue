@@ -24,8 +24,3 @@
         }
     }
 </script>
-
-<style lang="scss" scoped>
-    .co-posts-container {
-    }
-</style>

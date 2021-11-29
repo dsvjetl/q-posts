@@ -6,7 +6,12 @@
             v-for="post of posts"
             :key="post.id"
         >
-            <a class="post__title h--22">{{post.title}}</a>
+            <router-link
+                class="post__title h--22"
+                :to="{name: 'post', params: { id: post.id }}"
+            >
+                {{post.title}}
+            </router-link>
             <div class="comments" v-if="post.comments">
                 <div
                     class="comment h--15"

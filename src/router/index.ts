@@ -10,6 +10,11 @@ const routes: RouteConfig[] = [
         name: 'posts',
         component: PostsContainer,
     },
+    {
+        path: '/post/:id',
+        name: 'post',
+        component: () => import('../views/PostContainer.vue'),
+    },
     // {
     //     path: '/',
     //     name: 'name',
