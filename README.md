@@ -1,5 +1,9 @@
 # q-posts
 
+## Requirements
+- Node (v ~16.13.0)
+- NPM (v ~8.1.0)
+
 ## Project setup
 ```
 npm install
