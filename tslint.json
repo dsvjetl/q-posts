@@ -21,6 +21,8 @@
         "quotemark": [
             true,
             "single"
-        ]
+        ],
+        "member-access": false,
+        "no-shadowed-variable": false
     }
 }
