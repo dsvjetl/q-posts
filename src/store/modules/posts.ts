@@ -39,6 +39,9 @@ export const mutations = {
         const post = state.singlePost;
         state.postWithUser = Object.assign(post, {user});
     },
+    clearPostWithUser(state: PostsState) {
+        state.postWithUser = null;
+    },
 };
 
 export const actions = {

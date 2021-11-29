@@ -14,9 +14,6 @@ export const mutations = {
     setUser(state: UsersState, user: UserDTO) {
         state.user = user;
     },
-    clearUser(state: UsersState) {
-        state.user = null;
-    },
 };
 
 export const actions = {

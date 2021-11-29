@@ -30,7 +30,7 @@
         }
 
         destroyed() {
-            this.$store.dispatch('clearUser');
+            this.$store.commit('clearPostWithUser');
         }
 
         backToHome() {
